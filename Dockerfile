@@ -15,5 +15,5 @@ RUN chown -R jboss:0 ${JBOSS_HOME} \
 USER jboss
 
 # Set the default command to run on boot
-ENTRYPOINT ["/opt/jboss/vertxgtw/apiman-gateway.sh", "--conf=configs/conf-es.json"]
+ENTRYPOINT ["/opt/jboss/vertxgtw/apiman-distro-vertx-$APIMAN_VERSION/apiman-gateway.sh", "--conf=configs/conf-es.json"]
 
