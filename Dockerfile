@@ -9,14 +9,13 @@ RUN mkdir $HOME/vertxgtw && cd $HOME/vertxgtw \
  && curl https://downloads.jboss.org/apiman/$APIMAN_VERSION/apiman-distro-vertx-$APIMAN_VERSION.zip | bsdtar -xvf- \
  && mv $HOME/vertxgtw/apiman-distro-vertx-$APIMAN_VERSION $JBOSS_HOME/vertxgtw
 
+COPY ./configs/conf-es.json ${JBOSS_HOME}/vertxgtw/configs
 
 RUN chown -R jboss:0 ${JBOSS_HOME} \
  && chmod -R g+rw ${JBOSS_HOME} \
  && chmod -R 755 ${JBOSS_HOME}/vertxgtw/*.sh
 
 USER jboss
-
-COPY ./configs/conf-es.json ${JBOSS_HOME}/vertxgtw/configs
 
 WORKDIR ${JBOSS_HOME}/vertxgtw
 
