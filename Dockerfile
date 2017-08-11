@@ -16,6 +16,8 @@ RUN chown -R jboss:0 ${JBOSS_HOME} \
 
 USER jboss
 
+WORKDIR ${JBOSS_HOME}/vertxgtw
+
 # Set the default command to run on boot
-CMD ["/opt/jboss/vertxgtw/apiman-gateway.sh --conf=configs/conf-es.json"]
+CMD ["apiman-gateway.sh --conf=configs/conf-es.json"]
 
