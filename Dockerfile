@@ -19,5 +19,5 @@ USER jboss
 WORKDIR ${JBOSS_HOME}/vertxgtw
 
 # Set the default command to run on boot
-CMD ["apiman-gateway.sh --conf=configs/conf-es.json"]
+CMD ["/opt/jboss/vertxgtw/apiman-gateway.sh --conf=configs/conf-es.json"]
 
