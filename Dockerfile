@@ -1,9 +1,9 @@
 FROM jboss/base-jdk:8
 
-ENV GTW_VERSION 1.3.1.Final
+ENV APIMAN_VERSION 1.3.1.Final
 
 RUN mkdir $HOME/vertxgtw && cd $HOME/vertxgtw \
- && curl http://downloads.jboss.org/apiman/$APIMAN_VERSION/apiman-distro-vertx-$APIMAN_VERSION.zip | bsdtar -xvf-
+ && curl https://downloads.jboss.org/apiman/$APIMAN_VERSION/apiman-distro-vertx-$APIMAN_VERSION.zip | bsdtar -xvf-
 
 USER root
 
