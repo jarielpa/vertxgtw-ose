@@ -12,7 +12,7 @@ RUN mkdir $HOME/vertxgtw && cd $HOME/vertxgtw \
 
 RUN chown -R jboss:0 ${JBOSS_HOME} \
  && chmod -R g+rw ${JBOSS_HOME} \
- && chmod -R 755 ${JBOSS_HOME}\vertxgtw\*.sh
+ && chmod -R 755 ${JBOSS_HOME}/vertxgtw/*.sh
 
 USER jboss
 
