@@ -7,7 +7,8 @@ USER root
 
 RUN mkdir $HOME/vertxgtw && cd $HOME/vertxgtw \
  && curl https://downloads.jboss.org/apiman/$APIMAN_VERSION/apiman-distro-vertx-$APIMAN_VERSION.zip | bsdtar -xvf- \
- && mv $HOME/vertxgtw $JBOSS_HOME
+ && mv $HOME/vertxgtw/apiman-distro-vertx-$APIMAN_VERSION $JBOSS_HOME/vertxgtw
+
 
 RUN chown -R jboss:0 ${JBOSS_HOME} \
  && chmod -R g+rw ${JBOSS_HOME}
@@ -15,5 +16,5 @@ RUN chown -R jboss:0 ${JBOSS_HOME} \
 USER jboss
 
 # Set the default command to run on boot
-ENTRYPOINT ["/opt/jboss/vertxgtw/apiman-distro-vertx-$APIMAN_VERSION/apiman-gateway.sh", "--conf=configs/conf-es.json"]
+ENTRYPOINT ["/opt/jboss/vertxgtw/apiman-gateway.sh", "--conf=configs/conf-es.json"]
 
