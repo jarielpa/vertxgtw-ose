@@ -16,6 +16,8 @@ RUN chown -R jboss:0 ${JBOSS_HOME} \
 
 USER jboss
 
+COPY ./configs/conf-es.json ${JBOSS_HOME}/vertxgtw/configs
+
 WORKDIR ${JBOSS_HOME}/vertxgtw
 
 # Set the default command to run on boot
